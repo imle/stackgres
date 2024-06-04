@@ -180,6 +180,15 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 60
           timeoutSeconds: 10
+        {{- if ge (int .Capabilities.KubeVersion.Minor) 29 }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          seccompProfile:
+            type: RuntimeDefault
+          capabilities:
+            drop:
+              - ALL
+        {{- end }}
         readinessProbe:
           httpGet:
             path: "/q/health/ready"

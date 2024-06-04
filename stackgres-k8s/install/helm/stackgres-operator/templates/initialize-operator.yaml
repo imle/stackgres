@@ -141,6 +141,15 @@ spec:
           - name: OPERATOR_VERSION
             value: {{ . | quote }}
           {{- end }}
+        {{- if ge (int .Capabilities.KubeVersion.Minor) 29 }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          seccompProfile:
+            type: RuntimeDefault
+          capabilities:
+            drop:
+              - ALL
+        {{- end }}
         {{- with .Values.operator.resources }}
         resources:
           {{- toYaml . | nindent 10 }}
