@@ -75,7 +75,7 @@ spec:
                 description: |
                   Section to configure namespaces that the operator is allowed to use. If allowedNamespaces is defined it will be used instead. If empty all namespaces will be allowed (default).
                   
-                  See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#labelselector-v1-meta
+                  See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.30/#labelselector-v1-meta
 
                   > This value can only be set in operator helm chart.
                 additionalProperties:

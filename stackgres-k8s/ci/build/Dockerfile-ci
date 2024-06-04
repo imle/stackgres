@@ -126,7 +126,7 @@ FROM registry.access.redhat.com/ubi8-minimal:8.8-1072
   RUN microdnf install -y xz
   RUN mkdir -p ~/.docker/cli-plugins
   RUN echo '{"experimental":"enabled"}' > ~/.docker/config.json
-  RUN wget -O /bin/kubectl "https://dl.k8s.io/release/v1.29.1/bin/linux/$(uname -m | grep -qxF aarch64 && echo arm64 || echo amd64)/kubectl"
+  RUN wget -O /bin/kubectl "https://dl.k8s.io/release/v1.30.1/bin/linux/$(uname -m | grep -qxF aarch64 && echo arm64 || echo amd64)/kubectl"
   RUN chmod a+x /bin/kubectl
   RUN wget -O /bin/kind-0.15.0 "https://github.com/kubernetes-sigs/kind/releases/download/v0.15.0/kind-linux-$(uname -m | grep -qxF aarch64 && echo arm64 || echo amd64)"
   RUN chmod a+x /bin/kind-0.15.0

@@ -117,7 +117,7 @@ Vagrant.configure("2") do |config|
     usermod -G docker -a vagrant
     wget https://github.com/kubernetes-sigs/kind/releases/download/v0.21.0/kind-linux-amd64 -O /usr/local/bin/kind
     chmod a+x /usr/local/bin/kind
-    wget "https://dl.k8s.io/release/v1.29.1/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
+    wget "https://dl.k8s.io/release/v1.30.1/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
     chmod a+x /usr/local/bin/kubectl
     wget "https://github.com/derailed/k9s/releases/download/v0.31.7/k9s_Linux_amd64.tar.gz" -O -|tar xz -C /bin -f - k9s
   SHELL
